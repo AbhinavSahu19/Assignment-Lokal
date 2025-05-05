@@ -5,12 +5,12 @@ import com.google.gson.annotations.SerializedName
 data class ContactPreferenceDto(
 
     @SerializedName("preference")
-    var preference: Int? = null,
+    var preference: Int,
     @SerializedName("whatsapp_link")
-    var whatsappLink: String? = null,
+    var whatsappLink: String,
     @SerializedName("preferred_call_start_time")
-    var preferredCallStartTime: String? = null,
+    var preferredCallStartTime: String,
     @SerializedName("preferred_call_end_time")
-    var preferredCallEndTime: String? = null
+    var preferredCallEndTime: String
 
 )

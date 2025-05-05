@@ -6,11 +6,9 @@ data class JobDto(
     @SerializedName("id")
     var id: Int,
     @SerializedName("title")
-    var title: String? = null,
-    @SerializedName("type")
-    var type: Int? = null,
+    var title: String,
     @SerializedName("primary_details")
-    var primaryDetails: PrimaryDetailsDto? = PrimaryDetailsDto(),
+    var primaryDetails: PrimaryDetailsDto,
     @SerializedName("salary_max")
     var salaryMax: Int? = null,
     @SerializedName("salary_min")
@@ -18,27 +16,25 @@ data class JobDto(
     @SerializedName("premium_till")
     var premiumTill: String? = null,
     @SerializedName("content")
-    var content: String? = null,
+    var content: String,
     @SerializedName("company_name")
-    var companyName: String? = null,
+    var companyName: String,
     @SerializedName("shares")
-    var shares: Int? = null,
-    @SerializedName("fb_shares")
-    var fbShares: Int? = null,
+    var shares: Int,
     @SerializedName("whatsapp_no")
-    var whatsappNo: String? = null,
+    var whatsappNo: String,
     @SerializedName("contact_preference")
-    var contactPreference: ContactPreferenceDto? = ContactPreferenceDto(),
+    var contactPreference: ContactPreferenceDto,
     @SerializedName("expire_on")
     var expireOn: String? = null,
     @SerializedName("job_hours")
-    var jobHours: String? = null,
+    var jobHours: String,
     @SerializedName("openings_count")
-    var openingsCount: Int? = null,
+    var openingsCount: Int,
     @SerializedName("job_role")
-    var jobRole: String? = null,
+    var jobRole: String,
     @SerializedName("other_details")
-    var otherDetails: String? = null,
+    var otherDetails: String,
     @SerializedName("job_category")
-    var jobCategory: String? = null,
+    var jobCategory: String,
 )
