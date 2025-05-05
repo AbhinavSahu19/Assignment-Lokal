@@ -1,5 +1,6 @@
 package com.example.assignmentlokal.network.dto
 
+import com.example.assignmentlokal.local.entity.JobEntity
 import com.google.gson.annotations.SerializedName
 
 data class JobDto(
@@ -37,4 +38,26 @@ data class JobDto(
     var otherDetails: String,
     @SerializedName("job_category")
     var jobCategory: String,
-)
+){
+    fun toEntity(): JobEntity{
+        return JobEntity(
+            id = this.id,
+            title = this.title,
+            primaryDetails = this.primaryDetails.toEmbedded(),
+            salaryMax = this.salaryMax,
+            salaryMin = this.salaryMin,
+            premiumTill = this.premiumTill,
+            content = this.content,
+            companyName = this.companyName,
+            shares = this.shares,
+            whatsappNo = this.whatsappNo,
+            contactPreference = this.contactPreference.toEmbedded(),
+            expireOn = this.expireOn,
+            jobHours = this.jobHours,
+            openingsCount  = this.openingsCount,
+            jobRole = this.jobRole,
+            otherDetails  = this.otherDetails,
+            jobCategory = this.jobCategory,
+        )
+    }
+}

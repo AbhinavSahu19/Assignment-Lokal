@@ -1,5 +1,6 @@
 package com.example.assignmentlokal.network.dto
 
+import com.example.assignmentlokal.local.entity.PrimaryDetailsEmbedded
 import com.google.gson.annotations.SerializedName
 
 
@@ -12,4 +13,15 @@ data class PrimaryDetailsDto(
     @SerializedName("Fees_Charged") var feesCharged: String,
     @SerializedName("Qualification") var qualification: String
 
-)
+) {
+    fun toEmbedded(): PrimaryDetailsEmbedded {
+        return PrimaryDetailsEmbedded(
+            place = place,
+            salary = salary,
+            jobType = jobType,
+            experience = experience,
+            feesCharged = feesCharged,
+            qualification = qualification
+        )
+    }
+}
