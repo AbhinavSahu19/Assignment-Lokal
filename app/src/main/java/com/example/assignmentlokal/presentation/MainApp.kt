@@ -14,7 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.assignmentlokal.presentation.bookmark.BookmarkJobsScreen
 import com.example.assignmentlokal.presentation.bookmarkjobdetail.BookmarkJobDetailScreen
-import com.example.assignmentlokal.presentation.home.JobsScreen
+import com.example.assignmentlokal.presentation.jobs.JobsScreen
 import com.example.assignmentlokal.presentation.jobdetail.JobDetailScreen
 
 @Composable
