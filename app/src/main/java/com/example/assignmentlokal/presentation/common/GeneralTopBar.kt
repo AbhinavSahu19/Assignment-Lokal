@@ -21,7 +21,7 @@ fun GeneralTopBar(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Jobs",
+                        text = heading,
                         fontWeight = FontWeight.Bold,
                         fontSize = 24.sp,
                         color = MaterialTheme.colorScheme.primary
