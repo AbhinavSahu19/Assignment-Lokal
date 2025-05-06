@@ -1,15 +1,17 @@
 package com.example.assignmentlokal.network.dto
 
+import com.example.assignmentlokal.local.entity.ContactPreferenceEmbedded
 import com.example.assignmentlokal.local.entity.JobEntity
+import com.example.assignmentlokal.local.entity.PrimaryDetailsEmbedded
 import com.google.gson.annotations.SerializedName
 
 data class JobDto(
     @SerializedName("id")
     var id: Int,
     @SerializedName("title")
-    var title: String,
+    var title: String?,
     @SerializedName("primary_details")
-    var primaryDetails: PrimaryDetailsDto,
+    var primaryDetails: PrimaryDetailsDto? = PrimaryDetailsDto(),
     @SerializedName("salary_max")
     var salaryMax: Int? = null,
     @SerializedName("salary_min")
@@ -17,47 +19,47 @@ data class JobDto(
     @SerializedName("premium_till")
     var premiumTill: String? = null,
     @SerializedName("content")
-    var content: String,
+    var content: String? = "",
     @SerializedName("company_name")
-    var companyName: String,
+    var companyName: String? = "",
     @SerializedName("shares")
-    var shares: Int,
+    var shares: Int? = 0,
     @SerializedName("whatsapp_no")
-    var whatsappNo: String,
+    var whatsappNo: String? = "",
     @SerializedName("contact_preference")
-    var contactPreference: ContactPreferenceDto,
+    var contactPreference: ContactPreferenceDto? = ContactPreferenceDto(),
     @SerializedName("expire_on")
     var expireOn: String? = null,
     @SerializedName("job_hours")
-    var jobHours: String,
+    var jobHours: String? = "",
     @SerializedName("openings_count")
-    var openingsCount: Int,
+    var openingsCount: Int? = 0,
     @SerializedName("job_role")
-    var jobRole: String,
+    var jobRole: String? = "",
     @SerializedName("other_details")
-    var otherDetails: String,
+    var otherDetails: String? = "",
     @SerializedName("job_category")
-    var jobCategory: String,
-){
-    fun toEntity(): JobEntity{
+    var jobCategory: String? = "",
+) {
+    fun toEntity(): JobEntity {
         return JobEntity(
             id = this.id,
-            title = this.title,
-            primaryDetails = this.primaryDetails.toEmbedded(),
+            title = this.title ?: "",
+            primaryDetails = this.primaryDetails?.toEmbedded() ?: PrimaryDetailsEmbedded(),
             salaryMax = this.salaryMax,
             salaryMin = this.salaryMin,
             premiumTill = this.premiumTill,
-            content = this.content,
-            companyName = this.companyName,
-            shares = this.shares,
-            whatsappNo = this.whatsappNo,
-            contactPreference = this.contactPreference.toEmbedded(),
+            content = this.content ?: "",
+            companyName = this.companyName ?: "",
+            shares = this.shares ?: 0,
+            whatsappNo = this.whatsappNo ?: "",
+            contactPreference = this.contactPreference?.toEmbedded() ?: ContactPreferenceEmbedded(),
             expireOn = this.expireOn,
-            jobHours = this.jobHours,
-            openingsCount  = this.openingsCount,
-            jobRole = this.jobRole,
-            otherDetails  = this.otherDetails,
-            jobCategory = this.jobCategory,
+            jobHours = this.jobHours ?: "",
+            openingsCount = this.openingsCount ?: 0,
+            jobRole = this.jobRole ?: "",
+            otherDetails = this.otherDetails ?: "",
+            jobCategory = this.jobCategory ?: "",
         )
     }
 }

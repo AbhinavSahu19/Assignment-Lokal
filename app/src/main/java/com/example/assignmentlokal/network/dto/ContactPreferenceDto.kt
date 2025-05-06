@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName
 data class ContactPreferenceDto(
 
     @SerializedName("preference")
-    var preference: Int,
+    var preference: Int = 0,
     @SerializedName("whatsapp_link")
-    var whatsappLink: String,
+    var whatsappLink: String = "",
     @SerializedName("preferred_call_start_time")
-    var preferredCallStartTime: String,
+    var preferredCallStartTime: String  = "",
     @SerializedName("preferred_call_end_time")
-    var preferredCallEndTime: String
+    var preferredCallEndTime: String = ""
 
 ) {
     fun toEmbedded(): ContactPreferenceEmbedded {
